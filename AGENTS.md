@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Job sources live in src/lib/jobs (public no-key feeds: job boards + Greenhouse/Lever/Ashby/Workable/SmartRecruiters career APIs); keep total outbound fetches per search under ~50 to fit Worker subrequest limits.
+- AI matching runs in one server function (src/lib/match.functions.ts) with no database; results stay in page state since there are no accounts.
